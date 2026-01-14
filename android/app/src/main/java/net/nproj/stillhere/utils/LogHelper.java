@@ -19,7 +19,7 @@ public class LogHelper {
      * @param message 日志消息
      */
     public static void Debug(String message) {
-        Log.d("CHAT_SYSTEM", message);
+        Log.d("ST_SYSTEM", message);
     }
 
     /**
@@ -27,6 +27,6 @@ public class LogHelper {
      * * @param message 日志消息
      */
     public static void Error(String message) {
-        Log.e("CHAT_SYSTEM", message);
+        Log.e("ST_SYSTEM", message);
     }
 }
