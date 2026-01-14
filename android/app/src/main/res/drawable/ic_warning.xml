@@ -1,0 +1,19 @@
+<!--
+ Copyright (C) 2026 Tingyang Zhang
+
+ This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
+-->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="1024"
+    android:viewportHeight="1024">
+  <path
+      android:pathData="M512,95c-230.5,0 -418.1,187.6 -418.1,418.1 0,230.5 187.6,418.1 418.1,418.1s418.1,-187.6 418.1,-418.1c0,-230.5 -187.6,-418.1 -418.1,-418.1zM512,722.1c-28.9,0 -52.3,-23.4 -52.3,-52.3 0,-28.9 23.4,-52.3 52.3,-52.3s52.3,23.4 52.3,52.3c0,28.9 -23.4,52.3 -52.3,52.3zM564.3,513.1c0,28.9 -23.4,52.3 -52.3,52.3s-52.3,-23.4 -52.3,-52.3l0,-156.8c0,-28.9 23.4,-52.3 52.3,-52.3s52.3,23.4 52.3,52.3l0,156.8z"
+      android:fillColor="#2563eb"/>
+</vector>

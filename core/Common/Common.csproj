@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>Nproj.StillHereApp.Common</AssemblyName>
+    <RootNamespace>Nproj.StillHereApp.Common</RootNamespace>
+    <Configurations>Debug;Release;Test</Configurations>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DefineConstants Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">Windows</DefineConstants>
+    <DefineConstants Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">OSX</DefineConstants>
+    <DefineConstants Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">Linux</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+    <PackageReference Include="MailKit" Version="4.14.1" />
+    <PackageReference Include="MimeKit" Version="4.14.0" />
+    <PackageReference Include="MySql.Data" Version="8.4.0" />
+    <PackageReference Include="NEST" Version="7.10.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="NLog.Targets.ElasticSearch" Version="7.1.0" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="5.3.8" />
+    <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
+    <PackageReference Include="RestSharp" Version="112.1.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.7.17" />
+    <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IDal\IDal.csproj" />
+    <ProjectReference Include="..\Model\Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ModelHelper\Web\" />
+    <Folder Include="Subscribe\Model\" />
+  </ItemGroup>
+
+</Project>

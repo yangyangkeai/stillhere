@@ -1,0 +1,142 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>Nproj.StillHereApp.WebApp</AssemblyName>
+    <RootNamespace>Nproj.StillHereApp.WebApp</RootNamespace>
+    <UserSecretsId>3eba4138-e4d9-4ad6-b211-b2e79f8ee09d</UserSecretsId>
+    <Configurations>Debug;Release;Test</Configurations>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="publish.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Remove="config\pages.test.json" />
+    <Content Remove="config\nlog.toelastic.config" />
+    <Content Remove="config\nlog.test.toelastic.config" />
+    <Content Remove="config\nlog.config" />
+    <None Include="config\nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="run.sh">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Remove="appsettings.json" />
+    <None Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Remove="appsettings.development.json" />
+    <None Include="appsettings.development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Remove="appsettings.test.json" />
+    <Content Remove="wwwroot\favicon.ico" />
+    <Content Remove="wwwroot\index.html" />
+    <None Update="config\html.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Update="config\pages.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="10.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\Dal\Dal.csproj" />
+    <ProjectReference Include="..\IDal\IDal.csproj" />
+    <ProjectReference Include="..\WebApiController\WebApiController.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Config\nlog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Config\nlog.toelastic.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\css\main.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\main.css.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\main.css.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\antd.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\antd.min.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\antd.min.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\antd.mobile.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\antd.mobile.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\antd.mobile.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\main.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\main.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\main.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\case-form.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\case-form.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\case-form.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\case-success.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\case-success.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\case-success.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\casefrom-index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\casefrom-index.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\casefrom-index.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\error-404.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\error-404.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\error-404.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\error-wechat.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\error-wechat.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\error-wechat.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-detail.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-detail.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-detail.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-history.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-history.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-history.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-index.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-index.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-main.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-main.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-main.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-success.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-success.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\home-success.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\login-index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\login-index.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\login-index.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-apply.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-apply.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-apply.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-audit.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-audit.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-audit.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-audited.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-audited.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-audited.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-index.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-index.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-verify.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-verify.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\manager-verify.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\test-index.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\test-index.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\pages\test-index.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\vconsole.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\vconsole.min.js.br" />
+    <_ContentIncludedByDefault Remove="wwwroot\scripts\vconsole.min.js.gz" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\404.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\apk\" />
+  </ItemGroup>
+  
+</Project>

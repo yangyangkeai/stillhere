@@ -1,0 +1,19 @@
+<!--
+ Copyright (C) 2026 Tingyang Zhang
+
+ This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
+-->
+
+<resources>
+    <string name="app_name">还在么</string>
+    <string name="main_activity_warning">如果你连续两天都没有进行打卡登记，系统将会自动通过电子邮件向你的联系人发送通知。</string>
+    <string name="main_activity_warning_icon">警告图标</string>
+    <string name="main_activity_name_text">我叫：</string>
+    <string name="main_activity_please_enter">请输入</string>
+    <string name="main_activity_mail_text">联系人邮箱：</string>
+    <string name="check_in_btn_text">今天我还在</string>
+</resources>

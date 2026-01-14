@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>Nproj.StillHereApp.IDal</AssemblyName>
+    <RootNamespace>Nproj.StillHereApp.IDal</RootNamespace>
+    <Configurations>Debug;Release;Test</Configurations>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DalFactory.cs~RF1d982161.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ninject" Version="3.3.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj" />
+  </ItemGroup>
+
+</Project>

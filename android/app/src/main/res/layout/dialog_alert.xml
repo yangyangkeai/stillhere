@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (C) 2026 Tingyang Zhang
+
+ This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_white_round_corner"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="提示"
+            android:textColor="#1C1C1E"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/close_btn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:background="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_close" />
+
+        <!--有一个1px的线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="#D1D1D6" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:paddingTop="32dp">
+
+        <ImageView
+            android:id="@+id/icon_image"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ic_success" />
+
+        <TextView
+            android:id="@+id/icon_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已创建"
+            android:textColor="#666666"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:gravity="center"
+        android:text="提示内容?"
+        android:textColor="#111827"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/ok_btn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32dp"
+        style="@style/PrimaryButton"
+        android:text="确认" />
+
+    <Button
+        android:id="@+id/cancel_btn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32dp"
+        style="@style/DangerButton"
+        android:text="取消"/>
+
+
+</LinearLayout>

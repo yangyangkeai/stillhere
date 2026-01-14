@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (C) 2026 Tingyang Zhang
+
+ This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+
+ You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_element"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8fafc"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/section_top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="30dp"
+        android:paddingBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@id/section_middle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_activity_name_text"
+                android:textColor="#64748b"
+                android:textSize="14sp" />
+
+            <EditText
+                android:maxLength="30"
+                android:includeFontPadding="false"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:minHeight="0dp"
+                android:maxWidth="180dp"
+                android:visibility="gone"
+                android:id="@+id/edit_text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/main_activity_please_enter"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:textColor="#0f172a"
+                android:textColorHint="#0f172a"
+                android:textSize="16sp" />
+
+            <TextView
+                android:maxWidth="180dp"
+                android:visibility="gone"
+                android:id="@+id/text_view_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:textColor="#0f172a"
+                android:textSize="16sp" />
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/button_edit_name"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/ic_edit" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/main_activity_mail_text"
+                android:textColor="#64748b"
+                android:textSize="14sp" />
+
+
+            <EditText
+                android:maxLength="50"
+                android:includeFontPadding="false"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:minHeight="0dp"
+                android:maxWidth="180dp"
+                android:id="@+id/edit_text_mail"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/main_activity_please_enter"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:textColor="#0f172a"
+                android:textColorHint="#0f172a"
+                android:textSize="16sp" />
+
+            <TextView
+                android:maxWidth="180dp"
+                android:id="@+id/text_view_mail"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:textColor="#0f172a"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/button_edit_mail"
+                android:visibility="gone"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/ic_edit" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/section_middle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/section_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/section_top"
+        app:layout_constraintVertical_weight="1">
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/bg_circle1"
+                android:layout_width="400dp"
+                android:layout_height="400dp"
+                android:layout_gravity="center"
+                android:alpha="0.5"
+                android:background="@drawable/bg_smiley_circle" />
+
+            <View
+                android:layout_width="230dp"
+                android:layout_height="230dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_smiley_circle" />
+
+            <com.lihang.ShadowLayout
+                android:id="@+id/btn_check_in"
+                android:layout_width="320dp"
+                android:layout_height="320dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="-40dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:hl_cornerRadius="80dp"
+                app:hl_layoutBackground="#00f5d4"
+                app:hl_shadowColor="#000000"
+                app:hl_shadowLimit="50dp"
+                app:hl_shadowOffsetX="0dp"
+                app:hl_shadowOffsetY="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="86dp"
+                        android:layout_height="92dp"
+                        android:background="@drawable/bg_smiley_circle2">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="-5dp"
+                            android:src="@drawable/ic_sentiment_satisfied"
+                            app:tint="#001B2E" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/check_in_btn_text"
+                        android:textColor="#0f172a"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </com.lihang.ShadowLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/text_view_last_checkin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="320dp"
+                android:textColor="#94a3b8"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/section_bottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/section_middle">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_section"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:padding="14dp"
+            tools:ignore="UselessParent">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="@string/main_activity_warning_icon"
+                android:src="@drawable/ic_warning" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/main_activity_warning"
+                android:textColor="#475569"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

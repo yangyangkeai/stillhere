@@ -1,0 +1,31 @@
+﻿{
+  "title": "还在么",
+  "keywords": "还在么",
+  "description": "还在么",
+  "commCss": [
+    "/css/main.css"
+  ],
+  "commJs": [
+    "/scripts/main.js",
+    "/scripts/antd.min.js",
+    "/scripts/antd.mobile.js"
+  ],
+  "commFootContent": [
+    ""
+  ],
+  "pages": [
+    {
+      "controller": "home",
+      "action": "index",
+      "RequireLogged": false,
+      "LoggedNoAccess": true,
+      "Checkers": []
+    },
+    {
+      "controller": "error",
+      "action": "404",
+      "RequireLogged": false,
+      "LoggedNoAccess": false
+    }
+  ]
+}
