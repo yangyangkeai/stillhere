@@ -29,6 +29,7 @@ stillhere/
 │   ├── WebApp/         # API服务
 │   ├── App.SendMails/  # 邮件发送服务
 ├── android/            # 原生安卓程序
+├── assets/             # MD文档引用的资源
 ├── resource/           # 一些资源文件
 ├── LICENSE             # 开源协议
 ├── LICENSE_HEADER      # 代码版权声明头
