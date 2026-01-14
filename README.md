@@ -12,6 +12,7 @@ StillHere 是一个极简的开源打卡应用，用于**每日确认“我还�
 - 📧 **紧急联系人通知**：通过 Email 发送异常提醒
 - 🔒 **极简 & 克制**：不追踪、不定位、不收集多余数据
 - 🌱 **完全开源**：代码透明，可自行部署
+- 🚧 **持续演进**：更多功能将随项目迭代逐步加入
 
 ## 效果预览
 
@@ -30,6 +31,7 @@ stillhere/
 │   ├── App.SendMails/  # 邮件发送服务
 ├── android/            # 原生安卓程序
 ├── assets/             # MD文档引用的资源
+├── front/              # 一个基于React渲染的Web前端项目，目前仅有一个欢迎首页。可基于此项目扩展官网。
 ├── resource/           # 一些资源文件
 ├── LICENSE             # 开源协议
 ├── LICENSE_HEADER      # 代码版权声明头
@@ -42,6 +44,9 @@ stillhere/
 - **MySQL 8**：核心业务数据存储。
 - **Redis**：缓存/简单消息收发。
 - **Email 通知**：依赖SMTP服务发送邮件。
+
+### 前端
+一个基于React渲染的Web前端项目（自定义开发架构），后端项目跑起来后，浏览器直接访问就会显示这里的页面。目前实现了一个首页及404页面。 
 
 ### 客户端
 
@@ -86,7 +91,21 @@ mysql -u root -p still_here < resource/db/ddl.sql
 
 找到.NET项目中的appsettings.development.json/appsettings.json中的Redis部分修改Redis连接地址。
 
-### 四、运行后端
+### 四、编译前端
+
+请确保已安装以下依赖：
+
+- Node v22+
+- 全局 Gulp 3.x
+- Yarn 1.22+
+
+```bash
+cd front\\src
+yarn install
+gulp build.dev
+```
+
+### 五、运行后端
 
 ```bash
 cd core\\WebApp
@@ -94,7 +113,7 @@ dotnet run
 ```
 
 - 运行后会监听本地443端口，如果端口被占用会报错。
-- 本地运行会使用域名https://st.local.nproj.net/，请在自己的HOSTS文件中将此域名解析到本机局域网IP上。
+- 本地运行会使用域名https://st.local.nproj.net/（前端编译成功且运行成功的话访问可以直接打开首页），请在自己的HOSTS文件中将此域名解析到本机局域网IP上。
 - 注意如果证书不被信任请导入resource/web_ca/yang_dev_ca.crt，或修改使用的域名，并修改core/WebApp/ca.pfx为自己信任的开发证书。
 
 HOSTS配置：
@@ -103,13 +122,13 @@ HOSTS配置：
 192.168.x.x st.local.nproj.net
 ```
 
-### 五、运行 Android 客户端
+### 六、运行 Android 客户端
 
 - 使用Android Studio打开android/目录。
 - build.gradle.kts中修改API地址为本地后端地址。（如果没有修改域名可以忽略）
 - 运行到模拟器或真机即可。（请注意真机是否可访问本地运行的后端程序）
 
-### 六、邮件发送（App.SendMails）
+### 七、邮件发送（App.SendMails）
 
 此程序目前还处于初级阶段，它是一个独立的控制台应用程序，线上部署时应使用cron服务托管调度。本地预览直接运行它就可以看到效果。
 SMTP环境变量：

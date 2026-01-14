@@ -1,0 +1,295 @@
+/**
+ * Copyright (C) 2026 Tingyang Zhang
+ *
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
+ */
+
+@import (reference) "../bootstrap/bootstrap.less";
+@import "antd";
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #ffffff;
+  padding: 0px;
+  margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei UI, Microsoft YaHei, Source Han Sans CN, sans-serif !important;
+  color: #000000 !important;
+  /*line-height: 1.5 !important;*/
+  line-height: 1;
+  font-size: 14px !important;
+  -webkit-text-size-adjust: none;
+  font-weight: 400;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+input, textarea {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei UI, Microsoft YaHei, Source Han Sans CN, sans-serif !important;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+p {
+  margin: 0px 0px 0px 0px !important;
+}
+
+/*.ns-main div {
+  .transition-duration(0.2s);
+}*/
+
+.ns-main.no-bg {
+  background: none !important;
+  background-color: #fff !important;
+}
+
+.ns-main.flex-cc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  //.transition-duration(0.2s) !important;
+  .transition(all 0.2s) !important;
+  color: #000000;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+a:hover {
+  /*text-decoration: none;*/
+}
+
+#react-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.ns-main {
+  flex: 1;
+  background-position: center center;
+  visibility: hidden;
+  position: relative;
+  /*background-image: url(../images/bg.jpg);*/
+  background-size: 100% auto;
+  min-height: 100%;
+  box-sizing: border-box;
+  .transition-duration(0s) !important;
+  /*overflow: hidden;*/
+  height: 100%;
+}
+
+.ml-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.height1 {
+  .size(100%, 1px);
+  overflow: hidden;
+}
+
+.height5 {
+  .size(100%, 5px);
+  overflow: hidden;
+}
+
+.height10 {
+  .size(100%, 10px);
+  overflow: hidden;
+}
+
+.height15 {
+  .size(100%, 15px);
+  overflow: hidden;
+}
+
+.height20 {
+  .size(100%, 20px);
+  overflow: hidden;
+}
+
+.height25 {
+  .size(100%, 25px);
+  overflow: hidden;
+}
+
+.height30 {
+  .size(100%, 30px);
+  overflow: hidden;
+}
+
+.height35 {
+  .size(100%, 35px);
+  overflow: hidden;
+}
+
+.height40 {
+  .size(100%, 40px);
+  overflow: hidden;
+}
+
+.height45 {
+  .size(100%, 45px);
+  overflow: hidden;
+}
+
+.height50 {
+  .size(100%, 50px);
+  overflow: hidden;
+}
+
+.auto-size-img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.pc {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+
+@media screen and (max-width: 750px) {
+  body {
+    font-size: 14px;
+  }
+
+  .ns-main {
+    overflow-x: hidden;
+  }
+
+  .pc {
+    display: none !important;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
+
+.no-data {
+  text-align: center;
+}
+
+a.dis {
+  cursor: default;
+  /*box-shadow: none !important;
+  background-color: #999 !important;*/
+}
+
+/*
+a.dis:hover {
+  box-shadow: none !important;
+}*/
+
+:root {
+  --adm-color-primary: rgb(51, 112, 255) !important;
+  --header-button-font-size: 14px !important;
+  --item-font-size: 14px !important;
+}
+
+a[title='站长统计'] {
+  display: none;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+.upload-btn {
+
+  /*display: block;*/
+  position: fixed;
+  width: 128px;
+  height: 128px;
+  right: 48px;
+  bottom: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  //背景渐变色从#3370FF到#749EFF, 从左下角到右上角
+  background: linear-gradient(45deg, #3370FF, #749EFF);
+
+  //有一个阴影
+  box-shadow: 0 10px 36px 0 rgba(0, 0, 0, 0.16);
+
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #fff;
+
+  border-radius: 100px;
+
+  .icon {
+    margin-bottom: 8px;
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/icon-upload.svg);
+  }
+
+  /*background-image: url(../images/upload-btn.png);
+  background-size: 100% 100%;*/
+
+  /*img {
+    width: 100%;
+    height: 100%;
+  }*/
+
+}
+
+@media screen and (max-width: 1000px) {
+  .upload-btn {
+    display: none;
+  }
+
+  body {
+    background-color: #fff;
+  }
+}
+
+@import "./replace";
+@import "./custom-loading";
+@import "./layer/index";
+@import "./error/index";
+@import "./home/index";
+
+.mao {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.copy-input {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}

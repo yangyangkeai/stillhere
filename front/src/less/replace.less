@@ -1,0 +1,457 @@
+/**
+ * Copyright (C) 2026 Tingyang Zhang
+ *
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
+ */
+
+@import (reference) "../bootstrap/bootstrap.less";
+
+.ant-select-selector {
+  background-color: transparent !important;
+  line-height: 1 !important;
+}
+
+.ant-select-dropdown {
+  /* background: #FFFFFF;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   border-radius: 4px;*/
+  border: 0px solid #fff !important;
+  background: transparent !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.ant-select-dropdown .ts-select-dropdown {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  width: calc(100% + 16px);
+  .translate(-16px, 14px);
+  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+}
+
+.ant-select-dropdown .ts-select-dropdown-large {
+  width: calc(100% + 33px);
+}
+
+.ant-cascader-dropdown .ant-cascader-menu:not(:last-child) {
+  border-inline-end: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ant-select-multiple .ant-select-selector:after {
+  line-height: 20px !important;
+}
+
+.ant-select-multiple .ant-select-selection-placeholder {
+  color: #c5c5c5 !important;
+  left: 0px !important;
+  /*top: 42% !important;*/
+  padding-top: 0px;
+}
+
+.ant-checkbox-wrapper {
+  margin-right: 8px !important;
+}
+
+.ant-select-multiple .ant-select-selector:after {
+  margin: 0px !important;
+}
+
+.ant-checkbox-checked:after {
+  color: rgb(121, 72, 234) !important;
+}
+
+.ant-select-selection-overflow-item {
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: rgb(121, 72, 234) !important;
+  border-color: rgb(121, 72, 234) !important;
+}
+
+/*.ant-checkbox-inner:hover {
+  background-color: rgb(204, 91, 90) !important;
+}*/
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  height: 20px !important;
+}
+
+.ant-select .ant-select-selector {
+  border: 0 !important;
+  min-height: 20px !important;
+  padding: 0 !important;
+  outline: none !important;
+  color: #303030 !important;
+  font-size: 16px !important;
+}
+
+.ant-select-item-option-selected {
+  background-color: rgba(0, 34, 204, 0.1) !important;
+}
+
+.ant-select .ant-select-selection-search {
+  display: none !important;
+}
+
+.ant-select-single.ant-select-open .ant-select-selection-item {
+  color: #303030 !important;
+}
+
+.ant-select .ant-select-arrow {
+  display: none !important;
+}
+
+.ant-select-multiple .ant-select-selection-item {
+  height: 20px !important;
+}
+
+.ant-select-multiple .ant-select-selection-item-remove > .anticon {
+  vertical-align: middle;
+}
+
+.ant-select-multiple .ant-select-selection-item-remove {
+  margin-right: 4px;
+}
+
+.ant-select .ant-select-selection-item {
+  line-height: 20px !important;
+  padding: 0 !important;
+  outline: none !important;
+  //----
+  margin: 0px !important;
+  margin-right: 0px !important;
+  border: 0 !important;
+  padding-left: 0px !important;
+  //----
+}
+
+.ant-select-disabled.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  background: transparent !important;
+  color: #939599 !important;
+}
+
+.anticon.anticon-check svg {
+  color: rgb(121, 72, 234) !important;
+}
+
+.ant-checkbox-input:focus + .ant-checkbox-inner, .ant-checkbox-wrapper:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner {
+  border-color: rgb(121, 72, 234) !important;
+}
+
+.ant-checkbox-checked::after {
+  border: none !important;
+}
+
+/*.ant-checkbox:hover {
+  border-color:  rgb(121, 72, 234) !important;
+}*/
+
+//-------------------------------------------
+
+.ant-select-selection-placeholder {
+  line-height: 20px !important;
+  font-size: 16px !important;
+  color: #C5C5C5 !important;
+}
+
+.ant-select-multiple {
+  min-height: 20px !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+
+.ant-select-selection-item-content {
+  /*font-size: 14px !important;*/
+}
+
+.ant-select.ant-select-auto-complete .ant-select-selection-search {
+  display: block !important;
+}
+
+.ant-select-focused .ant-select-selector {
+  border: 0px !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.ant-select.ant-select-auto-complete .ant-select-selection-search {
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  right: auto;
+  left: 0px;
+  width: 100%;
+}
+
+
+.ant-select-auto-complete {
+  border-radius: 0px !important;
+  height: 20px !important;
+  overflow: hidden !important;
+  display: block;
+  box-sizing: content-box;
+}
+
+
+.ant-radio-wrapper {
+  line-height: 1.6 !important;
+  margin-right: 8px !important;
+  /*.translate(0px, -1px)*/
+}
+
+
+.ant-select-dropdown .ant-select-item {
+  font-size: 16px;
+  line-height: 20px;
+  color: #626366;;
+}
+
+.ant-select-dropdown .ant-cascader-menu-item {
+  font-size: 16px;
+  line-height: 20px;
+  color: #626366;;
+}
+
+.ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #fff !important;
+  font-weight: 400;
+  color: rgb(43, 43, 43);
+}
+
+.ant-cascader-dropdown .ant-cascader-menu-item-active:not(.ant-cascader-menu-item-disabled) {
+  background-color: #fff !important;
+  font-weight: 400 !important;
+  color: rgb(43, 43, 43);
+}
+
+
+//----------------------
+
+
+.green .ant-checkbox-checked:after {
+  color: #22CC00 !important;
+}
+
+.green .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #22CC00 !important;
+  border-color: #22CC00 !important;
+}
+
+.green .ant-checkbox-input:focus + .ant-checkbox-inner, .green .ant-checkbox-wrapper:hover .ant-checkbox-inner, .green .ant-checkbox:hover .ant-checkbox-inner {
+  border-color: #22CC00 !important;
+}
+
+.green .anticon.anticon-check svg {
+  color: #22CC00 !important;
+}
+
+/*
+.q-item-select .ant-select {
+  width: 100%;
+}
+*/
+.ant-radio-wrapper .ant-radio-inner {
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+  background-color: rgb(121, 72, 234) !important;
+  border-color: rgb(121, 72, 234) !important;
+}
+
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner::after {
+  transform: scale(0.475) !important;
+  transform-origin: center center;
+}
+
+.ant-select-multiple .ant-select-selection-overflow-item {
+  margin-right: 5px !important;
+  /*margin-top: 0px !important;
+  margin-bottom: 0px !important;*/
+}
+
+.ant-select-multiple .ant-select-selection-item {
+  line-height: 20px !important;
+  height: 20px !important;
+}
+
+.ant-slider-horizontal .ant-slider-rail {
+  height: 10px !important;
+  background-color: #d9d9d9 !important;
+  border-radius: 18px !important;
+}
+
+.ant-slider-horizontal .ant-slider-step {
+  top: 3px !important;
+  height: 10px !important;
+}
+
+.ant-slider-horizontal .ant-slider-track {
+  height: 10px !important;
+  border-radius: 18px !important;
+  background-color: rgb(121, 72, 234) !important;
+}
+
+.ant-slider {
+  margin: 0 10px !important;
+}
+
+.ant-slider-handle {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.ant-slider .ant-slider-handle::before {
+  inset-inline-start: 0px !important;
+  inset-block-start: 0px !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.ant-slider .ant-slider-handle::after {
+  width: 10px !important;
+  height: 10px !important;
+  inset-inline-start: 0px !important;
+  inset-block-start: 0px !important;
+  box-shadow: 0 0 0 4px rgb(121, 72, 234) !important;
+}
+
+.ant-slider-horizontal {
+  padding-block: 2px;
+  height: 12px;
+}
+
+.ant-tooltip .ant-tooltip-inner {
+  background-color: rgb(121, 72, 234) !important;
+  text-align: center !important;
+}
+
+.ant-tooltip .ant-tooltip-arrow:before {
+  background: rgb(121, 72, 234) !important;
+}
+
+.ant-radio-wrapper .ant-radio-disabled .ant-radio-inner {
+  background-color: #fff !important;
+  border-color: #b2b2b2 !important;
+}
+
+.ant-radio-wrapper .ant-radio-checked.ant-radio-disabled .ant-radio-inner {
+  background-color: #b2b2b2 !important;
+  border-color: #b2b2b2 !important;
+}
+
+.ant-radio-wrapper .ant-radio-disabled .ant-radio-inner::after {
+  background-color: #fff !important;
+}
+
+.ant-checkbox-disabled .ant-checkbox-inner {
+  background: #fff !important;
+  border-color: #939599 !important;
+}
+
+
+.ant-checkbox-wrapper-disabled:hover .ant-checkbox-inner {
+  border-color: #939599 !important;
+}
+
+.ant-checkbox-checked.ant-checkbox-disabled .ant-checkbox-inner {
+  border-color: #939599 !important;
+  background: #939599 !important;
+}
+
+.ant-checkbox-disabled .ant-checkbox-inner:after {
+  border-color: #fff !important;
+}
+
+.ant-select-disabled.ant-select-multiple .ant-select-selection-item {
+  color: #939599 !important;
+  border-color: #939599 !important;
+}
+
+.ant-slider.ant-slider-disabled .ant-slider-handle::after {
+  box-shadow: 0 0 0 4px #939599 !important;
+}
+
+
+@media screen and (max-width: 750px) {
+  .ant-select-dropdown .ts-select-dropdown {
+    width: calc(100% + 12px);
+    .translate(-12px, 14px);
+  }
+
+  .ant-select-dropdown .ts-select-dropdown-large {
+    width: calc(100% + 25px);
+  }
+}
+
+/*
+  奇葩的微信专用, 具体版本不确定, 根据测试情况加白
+*/
+body.weixin {
+  .ant-radio-wrapper .ant-radio-inner::after {
+    inset-block-start: auto;
+    inset-inline-start: auto;
+    margin-block-start: 0px !important;
+    margin-inline-start: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .ant-checkbox .ant-checkbox-inner:after {
+    left: 21.5%;
+  }
+
+  .ant-tooltip .ant-tooltip-arrow {
+    display: none !important;
+  }
+}
+
+.ant-checkbox .ant-checkbox-inner:after {
+  border-color: #000 !important;
+  //border-width: 1px !important;
+}
+
+.ant-input, .ant-input-number, .ant-input-number-input {
+  padding: 0 !important;
+  border-radius: 2px !important;
+  border: 1px solid rgba(217, 217, 217, 1);
+}
+
+.ant-input:hover, .ant-input-number:hover {
+  border-radius: 2px !important;
+  border-color: #7948ea !important;
+}
+
+.ant-input:focus, .ant-input-number-focused {
+  border-color: #7948ea !important;
+  box-shadow: none;
+}
+
+//readonly 不能有hover及focus的颜色
+.ant-input[readonly]:focus, .ant-input[readonly]:hover {
+  border-color: rgba(217, 217, 217, 1) !important;
+}
+
+.ant-input-number[readonly]:focus, .ant-input-number[readonly]:hover {
+  border-color: rgba(217, 217, 217, 1) !important;
+}
+
+.ant-input-number-handler:hover .ant-input-number-handler-down-inner {
+  color: #7948ea !important;
+}
+
+.ant-input-number-handler:hover .ant-input-number-handler-up-inner {
+  color: #7948ea !important;
+}
+
+.ant-input-number .ant-input-number-handler-wrap {
+  opacity: 1 !important;
+}

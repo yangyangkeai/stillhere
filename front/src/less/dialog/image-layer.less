@@ -1,0 +1,184 @@
+/**
+ * Copyright (C) 2026 Tingyang Zhang
+ *
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
+ */
+
+@import (reference) "../../bootstrap/bootstrap.less";
+
+.image-layer {
+  .nlc {
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: 100% !important;
+  }
+
+  .nlc-inner {
+    transition-duration: 0.2s;
+  }
+
+  .image-outer {
+    max-width: calc(100% - 200px);
+    max-height: calc(100vh - 160px);
+
+    img {
+      max-height: calc(100vh - 160px);
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../images/btn-close.svg);
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .control-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .control-bar-c {
+      width: 282px;
+      height: 52px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .item {
+        width: 64px;
+        height: 52px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 24px 24px;
+        margin-left: 12px;
+        margin-right: 12px;
+
+        &.zoom-in {
+          background-image: url(../../images/btn-zoom1.svg);
+        }
+
+        &.zoom-out {
+          background-image: url(../../images/btn-zoom2.svg);
+        }
+
+        &.download {
+          background-image: url(../../images/btn-download.svg);
+        }
+      }
+
+
+    }
+  }
+
+  .nlc-inner {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background: none !important;
+
+    .left {
+      min-width: 300px;
+      background-color: rgba(245, 245, 245, 1);
+      max-width: 708px;
+      border-radius: 8px;
+      position: relative;
+
+      .control-bar {
+        bottom: 10px;
+
+        .control-bar-c {
+          width: 100px;
+        }
+      }
+
+      img {
+        max-width: 708px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: contain;
+        background-color: #fff;
+        max-height: calc(100vh - 160px);
+      }
+    }
+
+    .right {
+      box-sizing: border-box;
+      width: 330px;
+      border-radius: 8px;
+      background: rgba(245, 245, 245, 1);
+      padding: 17px;
+      margin-left: 12px;
+
+      .copy-btn {
+        padding-top: 13px;
+        padding-bottom: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        a {
+          border-radius: 2px;
+          background: rgba(217, 217, 217, 1);
+          padding-left: 8px;
+          padding-right: 8px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          font-size: 14px;
+          line-height: 20px;
+          color: rgba(0, 0, 0, 1);
+
+          span {
+            display: inline-block;
+            padding-left: 24px;
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 24px 24px;
+            background-image: url(../../images/btn-copy.svg);
+          }
+        }
+      }
+
+      .item {
+        .item-title {
+          font-size: 16px;
+          line-height: 22px;
+          color: rgba(0, 0, 0, 1);
+          margin-bottom: 5px;
+        }
+
+        .item-content {
+          border-radius: 6px;
+          background: rgba(255, 255, 255, 1);
+          border: 1px solid rgba(217, 217, 217, 1);
+          box-sizing: border-box;
+          font-size: 14px;
+          line-height: 20px;
+          color: rgba(128, 128, 128, 1);
+          padding: 14px;
+          word-break: break-all;
+        }
+      }
+    }
+  }
+
+
+}
+
+

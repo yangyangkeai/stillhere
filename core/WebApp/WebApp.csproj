@@ -32,7 +32,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Remove="appsettings.test.json" />
-    <Content Remove="wwwroot\favicon.ico" />
     <Content Remove="wwwroot\index.html" />
     <None Update="config\html.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -135,7 +134,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
     <Folder Include="wwwroot\apk\" />
   </ItemGroup>
   

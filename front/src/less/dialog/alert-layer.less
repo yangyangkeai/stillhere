@@ -1,0 +1,105 @@
+/**
+ * Copyright (C) 2026 Tingyang Zhang
+ *
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
+ */
+
+@import (reference) "../../bootstrap/bootstrap.less";
+
+.alert-layer {
+
+  .nlc-inner {
+    background-color: #fff;
+    width: 100%;
+    border-radius: 8px;
+
+    .content {
+
+      margin-left: 20px;
+      margin-right: 20px;
+      max-height: calc(100vh - 250px);
+      overflow: hidden;
+      overflow-y: auto;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+      color: rgba(128, 128, 128, 1);
+
+      img {
+        max-width: 100%;
+      }
+
+      .nlc-content {
+        padding-top: 70px;
+        padding-bottom: 40px;
+        text-align: center;
+
+        p {
+          margin-bottom: 18px !important;
+        }
+      }
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 22px;
+      padding: 12px 20px;
+      border-bottom: 1px solid rgba(223, 225, 230, 1);
+    }
+
+    .btns {
+      padding-top: 16px;
+      padding-bottom: 35px;
+      //border-top: 1px solid rgba(223, 225, 230, 1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .btn {
+        font-size: 18px;
+        border-radius: 6px;
+
+        height: 50px;
+        line-height: 50px;
+
+        padding-left: 50px;
+        padding-right: 50px;
+
+        margin-left: 15px;
+        margin-right: 15px;
+        color: #fff;
+
+        &.btn-ok {
+          background: rgba(121, 72, 234, 1);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+          /*&:hover {
+            background: #0941B3;
+          }*/
+        }
+
+        &.btn-cancel {
+          background: rgba(223, 225, 230, 1);
+          color: rgba(0, 0, 0, 1);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+
+          /*&:hover {
+              background: #0941B3;
+              color: #fff;
+          }*/
+        }
+
+      }
+
+
+    }
+  }
+}
+
+
