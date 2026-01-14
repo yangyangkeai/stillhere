@@ -23,6 +23,7 @@ StillHere 是一个极简的开源打卡应用，用于**每日确认“我还�
 
 StillHere 采用前后端分离架构，不同平台使用原生技术栈实现。
 
+```text
 stillhere/
 ├── core/               # .NET程序
 │   ├── WebApp/         # API服务
@@ -32,6 +33,7 @@ stillhere/
 ├── LICENSE             # 开源协议
 ├── LICENSE_HEADER      # 代码版权声明头
 └── README.md           # 项目说明
+```
 
 ### 后端
 
