@@ -113,8 +113,9 @@ dotnet run
 ```
 
 - 运行后会监听本地443端口，如果端口被占用会报错。
-- 本地运行会使用域名https://st.local.nproj.net/（前端编译成功且运行成功的话访问可以直接打开首页），请在自己的HOSTS文件中将此域名解析到本机局域网IP上。
+- 本地运行会使用域名https://st.local.nproj.net/，请在自己的HOSTS文件中将此域名解析到本机局域网IP上。
 - 注意如果证书不被信任请导入resource/web_ca/yang_dev_ca.crt，或修改使用的域名，并修改core/WebApp/ca.pfx为自己信任的开发证书。
+- 一切就绪，用浏览器访问可以看到首页。
 
 HOSTS配置：
 
