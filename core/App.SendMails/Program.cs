@@ -17,10 +17,20 @@ namespace App.SendMails;
 
 /// <summary>
 /// 此程序由系统cron定时触发执行。每隔10分钟执行一次。
-/// 处理最后一次打卡时间超过2天的用户，发送邮件通知好友。
+/// 处理最后一次打卡时间超过指定时间(小时)的用户，发送邮件通知好友。
 /// </summary>
 class Program
 {
+    /// <summary>
+    /// 配置
+    /// 超过多少小时未打卡则发送邮件通知
+    /// </summary>
+    private static readonly int HourThreshold = 48;
+
+    /// <summary>
+    /// 程序入口
+    /// </summary>
+    /// <param name="args"></param>
     static void Main(string[] args)
     {
 #if DEBUG
@@ -32,7 +42,7 @@ class Program
 #endif
         //conn
         var conn = DbHelper.GetNewConnection(save: true);
-        var now = DateTime.Now.Date.AddDays(-2);
+        var now = DateTime.Now.Date.AddHours(0 - HourThreshold); //两天前
         LogHelper.Debug($"开始处理{now}之前未打卡的用户邮件通知");
         //sql
         var sql = @"SELECT Number,ContactEmail,NickName from sys_user where DelFlag=0 and Status=0 and LastCheckInTime is not null and LastCheckInTime<=@LastCheckInTime order by LastCheckInTime asc";
@@ -50,6 +60,7 @@ class Program
                 {
                     conn.Open();
                 }
+
                 DalFactory.GetInstance<IDalUser>().SetStatusByNumber(item.Item1, UserStatus.Notified);
                 LogHelper.Debug($"更新用户{item.Item1}状态为已通知成功");
             }
