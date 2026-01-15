@@ -18,7 +18,7 @@ StillHere 是一个极简的开源打卡应用，用于**每日确认“我还�
 
 <p align="left">
   <img src="assets/20260115_0000_poster.png" width="320" />
-  <img src="assets/20260115_013839_stillhere.gif" width="320" />
+  <video src="assets/20260115_013839_stillhere.mp4" width="320" controls></video>
 </p>
 
 ## 技术架构
