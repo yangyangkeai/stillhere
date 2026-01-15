@@ -61,11 +61,8 @@ namespace Nproj.StillHereApp.WebApiController
             {
                 return JsonResultHelper.Fail("今天已经打过卡了，明天再来吧！");
             }
-
-            var now = DateTime.Now;
-            var nextMidnight = DateTime.Today.AddDays(1); //本地时间的明天 00:00
-            var ttl = nextMidnight - now;
-            RedisHelper.Set(user.Number, "1", ttl);
+            
+            RedisHelper.Set(user.Number, "1", new TimeSpan(0, ConfigHelper.HourThresholdVal, 0));
 
             var history = new History()
             {
