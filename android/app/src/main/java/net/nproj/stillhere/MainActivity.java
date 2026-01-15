@@ -49,10 +49,11 @@ public class MainActivity extends BaseActivity {
     /**
      * 联系邮箱编辑框
      */
-    private  EditText editTextMail;
+    private EditText editTextMail;
 
     /**
      * 重写触摸事件分发以实现点击 EditText 之外区域隐藏键盘和清除焦点
+     *
      * @param ev 触摸事件
      * @return 是否消费该事件
      */
@@ -62,7 +63,7 @@ public class MainActivity extends BaseActivity {
             View v = getCurrentFocus();
             if (isShouldHideInput(v, ev)) {
                 // 1. 隐藏键盘
-                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 if (imm != null) {
                     assert v != null;
                     imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
@@ -97,6 +98,7 @@ public class MainActivity extends BaseActivity {
 
     /**
      * Activity 创建入口。
+     *
      * @param savedInstanceState 从系统恢复的上次保存状态；若无则为 null
      */
     @Override
@@ -241,12 +243,38 @@ public class MainActivity extends BaseActivity {
 
         //打卡按钮
         var btn = findViewById(R.id.btn_check_in);
+        var btnOuter = findViewById(R.id.btn_check_in_outer);
+        final boolean[] pressedInside = {false};
+        final float cornerRadiusDp = 80f;
+        final float cornerRadiusPx = cornerRadiusDp * getResources().getDisplayMetrics().density;
         btn.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
+            public boolean onTouch(View view, MotionEvent event) {
+                float x = event.getX();
+                float y = event.getY();
+                int w = view.getWidth();
+                int h = view.getHeight();
+                float r = cornerRadiusPx;
+
+                // 判断点是否在带圆角的矩形内部
+                boolean inside;
+                if (x >= r && x <= w - r) {
+                    inside = (y >= 0 && y <= h);
+                } else if (y >= r && y <= h - r) {
+                    inside = (x >= 0 && x <= w);
+                } else {
+                    // 角落区域，以对应角的圆心计算距离
+                    float cx = x < r ? r : (x > w - r ? w - r : x);
+                    float cy = y < r ? r : (y > h - r ? h - r : y);
+                    inside = Math.hypot(x - cx, y - cy) <= r;
+                }
+
+                final int action = event.getAction();
+                switch (action) {
                     case MotionEvent.ACTION_DOWN:
-                        v.animate()
+                        if (!inside) return false; // 点击在透明圆角外部，交由下层处理
+                        pressedInside[0] = true;
+                        btnOuter.animate()
                                 .scaleX(0.95f)
                                 .scaleY(0.95f)
                                 .setDuration(100)
@@ -256,7 +284,8 @@ public class MainActivity extends BaseActivity {
 
                     case MotionEvent.ACTION_UP:
                     case MotionEvent.ACTION_CANCEL:
-                        v.animate()
+                        final boolean upInside = inside;
+                        btnOuter.animate()
                                 .scaleX(1f)
                                 .scaleY(1f)
                                 .setDuration(150)
@@ -264,9 +293,10 @@ public class MainActivity extends BaseActivity {
                                 .withEndAction(new Runnable() {
                                     @Override
                                     public void run() {
-                                        if (event.getAction() == MotionEvent.ACTION_UP) {
-                                            v.performClick();
+                                        if (action == MotionEvent.ACTION_UP && pressedInside[0] && upInside) {
+                                            view.performClick();
                                         }
+                                        pressedInside[0] = false;
                                     }
                                 })
                                 .start();

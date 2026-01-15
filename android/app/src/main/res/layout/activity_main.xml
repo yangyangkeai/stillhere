@@ -174,7 +174,7 @@
                 android:background="@drawable/bg_smiley_circle" />
 
             <com.lihang.ShadowLayout
-                android:id="@+id/btn_check_in"
+                android:id="@+id/btn_check_in_outer"
                 android:layout_width="320dp"
                 android:layout_height="320dp"
                 android:layout_gravity="center"
@@ -189,6 +189,7 @@
                 app:hl_shadowOffsetY="0dp">
 
                 <LinearLayout
+                    android:id="@+id/btn_check_in"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
