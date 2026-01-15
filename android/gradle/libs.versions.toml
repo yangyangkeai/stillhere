@@ -7,7 +7,7 @@
 # You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
 
 [versions]
-agp = "8.13.2"
+agp = "9.0.0"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"

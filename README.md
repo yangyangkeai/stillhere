@@ -46,7 +46,8 @@ stillhere/
 - **Email 通知**：依赖SMTP服务发送邮件。
 
 ### 前端
-一个基于React渲染的Web前端项目（自定义开发架构），后端项目跑起来后，浏览器直接访问就会显示这里的页面。目前实现了一个首页及404页面。 
+
+一个基于React渲染的Web前端项目（自定义开发架构），后端项目跑起来后，浏览器直接访问就会显示这里的页面。目前实现了一个首页及404页面。
 
 ### 客户端
 
@@ -68,7 +69,7 @@ stillhere/
 - .NET SDK **10.x**
 - MySQL **8.x**
 - Redis **2.x 或以上**
-- Android Studio（仅Android客户端需要）
+- Android Studio 2025.2.3（仅Android客户端需要，Gradle 9.0.0）
 - Visual Studio 2026或以上版本（仅开发后端API时需要）
 
 ### 二、数据库（MySQL 8）
@@ -165,7 +166,6 @@ README 中仅提供通用的本地运行说明，
 如果你希望将 StillHere 部署到线上环境，或在部署过程中遇到任何技术问题，欢迎与我联系交流。
 
 - 可通过 GitHub Issue 提交问题
-
 
 ## License
 
