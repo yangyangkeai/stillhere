@@ -75,12 +75,17 @@ namespace Nproj.StillHereApp.Common.Utils
         /// <summary>
         /// LoginExpires
         /// </summary>
-        public static string LoginExpires = "Sys:LoginExpires";
+        public static string KEY_LoginExpires = "Sys:LoginExpires";
 
         /// <summary>
         /// LoginAutoExtension
         /// </summary>
-        public static string LoginAutoExtension = "Sys:LoginAutoExtension";
+        private static string KEY_LoginAutoExtension = "Sys:LoginAutoExtension";
+
+        /// <summary>
+        /// HourThreshold
+        /// </summary>
+        private static string KEY_HourThreshold = "Sys:HourThreshold";
 
         /// <summary>
         /// AesKey
@@ -135,7 +140,12 @@ namespace Nproj.StillHereApp.Common.Utils
         /// <summary>
         /// LoginAutoExtensionVal
         /// </summary>
-        public static double LoginAutoExtensionVal { get; set; } = 0;
+        public static double LoginAutoExtensionVal = 0;
+
+        /// <summary>
+        /// 一个人超过多少小时未打卡则发送邮件通知
+        /// </summary>
+        public static int HourThresholdVal = 0;
 
         /// <summary>
         /// 替换环境变量
@@ -195,7 +205,16 @@ namespace Nproj.StillHereApp.Common.Utils
             //这一块考虑初始化一些参数
             try
             {
-                LoginAutoExtensionVal = double.Parse(Get(LoginAutoExtension));
+                LoginAutoExtensionVal = double.Parse(Get(KEY_LoginAutoExtension));
+            }
+            catch
+            {
+                // ignored
+            }
+
+            try
+            {
+                HourThresholdVal = int.Parse(Get(KEY_HourThreshold));
             }
             catch
             {

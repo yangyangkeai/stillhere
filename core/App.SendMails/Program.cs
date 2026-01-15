@@ -25,7 +25,7 @@ class Program
     /// 配置
     /// 超过多少小时未打卡则发送邮件通知
     /// </summary>
-    private static readonly int HourThreshold = 48;
+    private static readonly int HourThreshold = ConfigHelper.HourThresholdVal;
 
     /// <summary>
     /// 程序入口

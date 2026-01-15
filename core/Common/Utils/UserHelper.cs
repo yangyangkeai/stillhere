@@ -123,7 +123,7 @@ public class UserHelper
             return "";
         }
 
-        var expires = int.Parse(ConfigHelper.Get(ConfigHelper.LoginExpires)); //这个是分钟
+        var expires = int.Parse(ConfigHelper.Get(ConfigHelper.KEY_LoginExpires)); //这个是分钟
         token = string.IsNullOrWhiteSpace(token) ? SystemHelper.Md5(user.Id.ToString() + SystemHelper.DateTimeToUnixTime(DateTime.Now)) : token;
         RedisHelper.Set(RedisHelper.KEY_UserId + token, user.Id, new TimeSpan(0, expires, 0));
         //token校验加进去
@@ -236,7 +236,7 @@ public class UserHelper
         var ttl = GetTokenTtl(token, out var key);
         if (ttl > 0 && ttl <= ConfigHelper.LoginAutoExtensionVal)
         {
-            var expires = int.Parse(ConfigHelper.Get(ConfigHelper.LoginExpires)); //这个是分钟
+            var expires = int.Parse(ConfigHelper.Get(ConfigHelper.KEY_LoginExpires)); //这个是分钟
             //自动续期
             RedisHelper.UpdateExpire(key, new TimeSpan(0, expires, 0));
             RedisHelper.UpdateExpire(token, new TimeSpan(0, expires, 0));
