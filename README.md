@@ -165,11 +165,7 @@ README 中仅提供通用的本地运行说明，
 如果你希望将 StillHere 部署到线上环境，或在部署过程中遇到任何技术问题，欢迎与我联系交流。
 
 - 可通过 GitHub Issue 提交问题
-- 或通过下面的联系方式直接联系我
 
-<p align="left">
-  <img src="assets/20260115_012910_Untitled-1.png" width="360" />
-</p>
 
 ## License
 
