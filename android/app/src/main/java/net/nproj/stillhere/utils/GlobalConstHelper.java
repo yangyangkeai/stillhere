@@ -19,6 +19,12 @@ import net.nproj.stillhere.model.http.resp.ContextUser;
 public class GlobalConstHelper {
 
     /**
+     * 一个人超过多少小时没签到就算失联
+     * 这个值用于显示在首页中
+     */
+    public static int HOUR_THRESHOLD = 0;
+
+    /**
      * 当前登录用户
      */
     public static ContextUser CONTEXT_USER = null;

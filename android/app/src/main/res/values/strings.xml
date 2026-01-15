@@ -10,7 +10,7 @@
 
 <resources>
     <string name="app_name">还在么</string>
-    <string name="main_activity_warning">如果你连续两天都没有进行打卡登记，系统将会自动通过电子邮件向你的联系人发送通知。</string>
+    <string name="main_activity_warning">如果你连续%1$s都没有进行打卡登记，系统将会自动通过电子邮件向你的联系人发送通知。</string>
     <string name="main_activity_warning_icon">警告图标</string>
     <string name="main_activity_name_text">我叫：</string>
     <string name="main_activity_please_enter">请输入</string>

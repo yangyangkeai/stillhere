@@ -15,7 +15,7 @@ import android.os.Bundle;
 import net.nproj.stillhere.i.RequestCallback;
 import net.nproj.stillhere.model.http.BaseResponse;
 import net.nproj.stillhere.model.http.req.InitRequest;
-import net.nproj.stillhere.model.http.resp.ContextUser;
+import net.nproj.stillhere.model.http.resp.InitResponse;
 import net.nproj.stillhere.utils.Api;
 import net.nproj.stillhere.utils.GlobalConstHelper;
 import net.nproj.stillhere.utils.HttpHelper;
@@ -54,8 +54,9 @@ public class SplashActivity extends BaseActivity {
                     @Override
                     public void onSuccess(BaseResponse data, String json) {
                         if (data.data != null) {
-                            var contextUser = JsonHelper.fromJson(data.data, ContextUser.class);
-                            UserHelper.SetUser(contextUser);
+                            var resp = JsonHelper.fromJson(data.data, InitResponse.class);
+                            GlobalConstHelper.HOUR_THRESHOLD = resp.hourThreshold;
+                            UserHelper.SetUser(resp.user);
                         }
                         //去MainActivity
                         startActivity(new android.content.Intent(SplashActivity.this, MainActivity.class));

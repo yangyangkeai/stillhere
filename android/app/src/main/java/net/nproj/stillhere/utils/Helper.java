@@ -455,4 +455,23 @@ public class Helper {
             imm.showSoftInput(editText, android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT);
         }
     }
+
+    /**
+     * 格式化小时数为天数显示
+     * @param hourThreshold 小时数
+     * @return 如果小于等于24小时，返回"xx小时"，否则返回"X天X小时",但是注意,如果X小时为0,不显示小时部分
+     */
+    public static String FormatHoursToDays(int hourThreshold) {
+        if (hourThreshold <= 24) {
+            return hourThreshold + "小时";
+        } else {
+            int days = hourThreshold / 24;
+            int hours = hourThreshold % 24;
+            if (hours == 0) {
+                return days + "天";
+            } else {
+                return days + "天" + hours + "小时";
+            }
+        }
+    }
 }

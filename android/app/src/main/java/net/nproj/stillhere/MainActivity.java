@@ -27,6 +27,7 @@ import net.nproj.stillhere.model.http.BaseResponse;
 import net.nproj.stillhere.model.http.req.ContentRequest;
 import net.nproj.stillhere.model.http.resp.ContextUser;
 import net.nproj.stillhere.utils.Api;
+import net.nproj.stillhere.utils.GlobalConstHelper;
 import net.nproj.stillhere.utils.Helper;
 import net.nproj.stillhere.utils.HttpHelper;
 import net.nproj.stillhere.utils.JsonHelper;
@@ -105,6 +106,12 @@ public class MainActivity extends BaseActivity {
 
         var rootView = findViewById(R.id.root_element);
         this.setSize(rootView);
+
+        //下面的提示文字
+        var days = Helper.FormatHoursToDays(GlobalConstHelper.HOUR_THRESHOLD);
+        var msg = getString(R.string.main_activity_warning, days);
+        TextView textViewWarning = findViewById(R.id.text_view_warning);
+        textViewWarning.setText(msg);
 
         if (UserHelper.GetUser() != null) {
 

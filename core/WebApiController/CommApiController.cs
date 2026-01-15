@@ -40,7 +40,11 @@ namespace Nproj.StillHereApp.WebApiController
                 }
             }
 
-            return JsonResultHelper.Success(user);
+            return JsonResultHelper.Success(new
+            {
+                user,
+                hourThreshold = ConfigHelper.HourThresholdVal
+            });
         }
     }
 }

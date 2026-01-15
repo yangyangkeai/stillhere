@@ -261,10 +261,10 @@
                 android:src="@drawable/ic_warning" />
 
             <TextView
+                android:id="@+id/text_view_warning"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="@string/main_activity_warning"
                 android:textColor="#475569"
                 android:textSize="13sp" />
         </LinearLayout>
