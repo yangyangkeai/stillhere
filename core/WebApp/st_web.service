@@ -1,0 +1,11 @@
+[Unit]
+Description=StillHere App Web Service
+
+[Service]
+WorkingDirectory=/data/d/web/sh.nproj.net/core
+ExecStart=/data/d/web/sh.nproj.net/core/run.sh
+Restart=always
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

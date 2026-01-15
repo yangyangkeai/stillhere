@@ -1,0 +1,34 @@
+# Copyright (C) 2026 Tingyang Zhang
+#
+# This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
+
+---
+- hosts: my_server
+  serial: 1
+  vars:
+    deploy_dir: /data/d/web/sh.nproj.net/core/
+  tasks:
+    - name: stop service
+      shell: systemctl stop st_web
+      ignore_errors: yes
+
+    - name: ensure deploy directory exists
+      file:
+        path: "{{ deploy_dir }}"
+        state: directory
+        recurse: yes
+      ignore_errors: yes
+
+    - name: sync files
+      synchronize:
+        src: ./
+        dest: "{{ deploy_dir }}"
+      ignore_errors: yes
+
+    - name: start service
+      shell: systemctl start st_web
+      ignore_errors: yes

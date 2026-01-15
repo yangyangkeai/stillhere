@@ -177,7 +177,3 @@ __pycache__
 /manager-publish
 /rss-publish
 /ig*
-*.bat
-*.sh
-*.service
-*.yaml
