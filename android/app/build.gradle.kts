@@ -38,7 +38,8 @@ android {
             buildConfigField("String", "API_BASE_URL", "\"https://st.local.nproj.net/api\"")
         }
         release {
-            buildConfigField("String", "API_BASE_URL", "\"https://----------------/api\"")
+            val apiUrlFromEnv = System.getenv("ST_API_BASE_URL")
+            buildConfigField("String", "API_BASE_URL", "\"$apiUrlFromEnv\"")
 
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
